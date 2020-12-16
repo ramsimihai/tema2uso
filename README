@@ -1,0 +1,83 @@
+Soare, Mihai-Daniel, 311CA
+TEMA #2 USO
+
+*) 
+  urasc literele mari
+
+Task 01)
+
+*) 
+  se copiaza utilizatorii din /etc/passwd care au shell-ul /usr/sbin/nologin, 
+  s-au selectat coloanele unde sunt userii si procesele acestora, au fost sortati
+  si s-au afisat cele 10 aparitii intr-un fisier.
+
+Task 02)
+
+*) 
+  s-a creat un director, s-au citit argumentele primite, se creeaza 
+  automat un fisier text in folderul anterior cu numele destinatarului in care 
+  se redirectioneaza printr-un bloc de text de tip EOF modelul de urare cerut
+
+Task 03)
+
+*) 
+  se iau doua cazuri: MOUNT si CREATE
+
+MOUNT) 
+  salvam locatia imaginii si destinatia unde sa fie montata, iar apoi
+  se shifteaza argumentele. prin intermediul getopt-ului salvam argumentele
+  lungi --directories si --destination in variabile corespunzatoare, le shiftam
+  iar mai apoi, se verifica cazul in care nu s-a folosit argumentul --directories:
+
+  1) 
+    daca nu atunci se monteaza imaginea normal si se copiaza in destinatia 
+    dorita;
+  2)
+    daca da, pentru fiecare director din directories se verifica daca exista 
+    deja imaginea montata in extracted ceea ce inseamna ca nu a primit
+    argument de tip --destination deci trebuie sters folderul imaginii
+    si copiat folderul primit ca argument direct in folderul extracted.
+    daca a primit argument de tip --destination copierea se face normal
+
+CREATE)
+  s-a generat o imagine iso dupa argumentele date
+
+OBS)
+  mi s-a parut destul de interesant acest task si mult mai straight-forward
+  decat mi s-a spus de catre colegii mei care se plangeau, desi nu
+  ar fi stricat un tutorial la getopt. gj
+     
+
+Task 04)
+
+a-b) 
+  s-a schimbat directorul in cel unde se fac modificari, se creeaza 
+  fisierele necesare si unul ajutator, s-a copiat in weather.info output-ul 
+  dorit, iar in live.info s-a verificat daca exista deja orasul dat ca argument
+  si se inlocuiesc argumentele date daca exista si se sterg cele vechi, altfel
+  sunt scrise peste;
+c) 
+  se poate folosi script-ul de la a-b), doar ca la inceput se modifica 
+  variabilele in functie de tipul argumentelor (lit. mare, numar sau lit. mica);
+OBS)
+  in weather_script.sh.save aveti un script care nu trece testele manual,
+  dar trece testele checker-ului si eram cam indecis daca sa-l las asa sau nu
+  pana la final, dar am modificat pana la urma. :)
+
+Task 05)
+
+*) 
+  se redirecteaza input-ul sortat dupa mesaj in doua variabile, se verifica
+  daca exista animalul dorit la afisare prin utilitarul cowsay si se transcrie in
+  output;
+  OBS: m-am chinuit doua ore sa aflu ca am nevoie de process substitution si
+  ca nu pot redirecta direct dintr-un fisier text
+
+Task 06)
+
+*) 
+  se cauta toate fisierele dupa nume in /etc care contin extensia .conf,
+  se redirecteaza erorile intr-un fisier text si se executa copierea fisierelor
+  in folderul dorit. ulterior, este adaugat prefixul _large tuturor fisierelor 
+  mai mari de 1K care se gasesc in folderul anterior si care contin .conf in nume 
+
